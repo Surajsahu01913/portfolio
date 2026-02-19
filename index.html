@@ -6,22 +6,25 @@
   <title>Suraj Sahu | Data Analyst</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!----Style-->
   <style>
-    body { font-family: 'Poppins', sans-serif; }
+    /* Flower Animation */
+.flower {
+  position: absolute;
+  font-size: 24px;
+  animation: fall 3s linear forwards;
+}
 
-    /* Message Box Styling */
-    .message-box {
-      width: 300px;
-      padding: 20px;
-      border: 2px solid #007BFF;
-      background-color: #E3F2FD;
-      color: #03396C;
-      border-radius: 8px;
-      font-family: Arial, sans-serif;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-      margin: 50px auto;
-      text-align: center;
-    }
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
   </style>
 </head>
 <body class="bg-slate-950 text-gray-200">
@@ -289,8 +292,17 @@
   </div>
 </section>
 
-<!-- MESSAGE BOX -->
-<div class="message-box">Thank you 🤗</div>
+<!-- DYNAMIC MESSAGE BOX -->
+<div class="flex justify-center my-16">
+  <div id="messageBox"
+       class="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-10 py-6 rounded-xl text-xl font-semibold shadow-lg transition transform hover:scale-105">
+       Click Me 😊
+  </div>
+</div>
+
+<!-- Flower Container -->
+<div id="flowerContainer" class="fixed inset-0 pointer-events-none overflow-hidden z-40"></div>
+
 
 <!-- ZOOM MODAL -->
 <div id="zoomModal" class="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center hidden z-50 p-4">
@@ -309,6 +321,34 @@ function closeZoom() {
   document.getElementById('zoomModal').classList.add('hidden');
 }
 </script>
+
+<script>
+/* Dynamic Message Animation */
+const messageBox = document.getElementById("messageBox");
+const flowerContainer = document.getElementById("flowerContainer");
+
+messageBox.addEventListener("click", () => {
+  messageBox.innerHTML = "Thank You 🙏";
+
+  const flowers = ["🌸","🎶","🎈","✨","🎉","😎","😊" ,"🌼", "🌺", "💐"];
+
+  for (let i = 0; i < 25; i++) {
+    const flower = document.createElement("div");
+    flower.classList.add("flower");
+    flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+
+    flower.style.left = Math.random() * 100 + "vw";
+    flower.style.animationDuration = (Math.random() * 2 + 2) + "s";
+
+    flowerContainer.appendChild(flower);
+
+    setTimeout(() => {
+      flower.remove();
+    }, 3000);
+  }
+});
+</script>
+
 
 <!-- CONTACT -->
 <section id="contact" class="py-20 bg-slate-900 text-center">
