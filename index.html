@@ -30,17 +30,23 @@
 <body class="bg-slate-950 text-gray-200">
 
 <!-- NAVBAR -->
-<nav class="fixed w-full bg-slate-900 shadow-lg z-50">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between">
+<nav class="fixed top-0 w-full bg-slate-900 shadow-lg z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <!-- Logo / Name -->
     <h1 class="text-xl font-bold text-blue-500">Suraj Sahu</h1>
-    <div class="space-x-6 hidden md:block">
-      <a href="#about" class="hover:text-blue-400">About</a>
-      <a href="#skills" class="hover:text-blue-400">Skills</a>
-      <a href="#certifications" class="hover:text-blue-400">Certifications</a>
-      <a href="#projects" class="hover:text-blue-400">Projects</a>
-      <a href="#gallery" class="hover:text-blue-400">Gallery</a>
-      <a href="#contact" class="hover:text-blue-400">Contact</a>
+
+    <!-- Menu -->
+    <div class="space-x-6 hidden md:flex">
+      <a href="#about" class="hover:text-blue-400 transition">About</a>
+      <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+      <a href="#certifications" class="hover:text-blue-400 transition">Certifications</a>
+      <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+      <a href="#video" class="hover:text-blue-400 transition">Video</a>
+      <a href="#gallery" class="hover:text-blue-400 transition">Gallery</a>
+      <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
     </div>
+
   </div>
 </nav>
 
@@ -57,7 +63,7 @@
     </p>
     <div class="mt-6 space-x-4">
       <a href="#projects" class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700 transition">View Projects</a>
-      <a href="files/resume.pdf" class="border border-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 transition">Download Resume</a>
+      <a href="files/Resume.pdf" class="border border-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 transition">Download Resume</a>
     </div>
   </div>
 </section>
@@ -65,12 +71,31 @@
 <!-- ABOUT -->
 <section id="about" class="py-20 bg-slate-900">
   <div class="max-w-5xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-blue-500 mb-6">About Me </h3>
-    <p class="text-gray-400 leading-7">
-      Bachelor of Computer Applications (CGPA 8.52) from Indian Institute of Management & Science (2023–2026).
-      Strong foundation in data cleaning, validation, MIS reporting, KPI development, ETL (basic),
-      and dashboard development using Power BI and Excel.
+    
+    <h3 class="text-3xl font-bold text-blue-500 mb-6">About Me</h3>
+
+    <p class="text-gray-400 leading-7 mb-4">
+      I have successfully completed my Bachelor of Computer Applications (BCA) with a CGPA of 8.52 from the Indian Institute of Management & Science (2023–2026).
     </p>
+
+    <p class="text-gray-400 leading-7 mb-4">
+      I am a passionate Data Analyst with certifications in Data Analytics from AnalytixLabs and Data Visualization from NASSCOM. I specialize in transforming raw data into meaningful insights that help businesses make smarter, data-driven decisions.
+      During my training and projects, I developed strong skills in Excel, SQL, Power BI, and Data Visualization. I focus on analyzing large datasets, identifying trends, and building interactive dashboards that support business decision-making.
+    </p>
+
+    <p class="text-gray-400 leading-7 mb-4">
+      My key strengths include data analysis, dashboard development, data cleaning, and generating business insights. I enjoy solving real-world business problems using data and presenting insights in a clear and impactful way.
+      I am currently seeking opportunities in Data Analyst or Business Intelligence roles where I can apply my analytical skills to support business growth and strategic decision-making.
+    </p>
+
+    <p class="text-gray-300 font-semibold">
+      Skills: Data Analysis | Excel | SQL | Power BI | Data Visualization | Dashboard Development | Data Cleaning
+    </p>
+
+    <p class="text-gray-300 font-semibold mt-2">
+      Goal: To help organizations unlock the power of data and turn insights into impactful business decisions.
+    </p>
+
   </div>
 </section>
 
@@ -81,18 +106,6 @@
 
     <!-- Experience 1 -->
     <div class="bg-slate-900 p-6 rounded-xl shadow-lg mb-6">
-      <h4 class="text-xl font-semibold">Data Reporting Analyst (Intern)</h4>
-      <p class="text-gray-400">Indian Institute of Management & Science | Jun 2025 – Aug 2025</p>
-      
-      <ul class="list-disc list-inside mt-4 text-gray-400 space-y-2">
-        <li>Automated MIS dashboards reducing manual effort by 30%.</li>
-        <li>Performed KPI, trend & demographic analysis for admission forecasting.</li>
-        <li>Cleaned and standardized large datasets improving reporting accuracy.</li>
-      </ul>
-    </div>
-
-    <!-- Experience 2 -->
-    <div class="bg-slate-900 p-6 rounded-xl shadow-lg">
       <h4 class="text-xl font-semibold">Data Analyst (Intern)</h4>
       <p class="text-gray-400">Projkeez Group Pvt. Ltd. (Project: MyClickBook) | Feb 2026 – Present</p>
       
@@ -100,6 +113,18 @@
         <li>Built KPI dashboards and performed advanced data analysis (RFM, Cohort, Revenue Trends) using SQL, Excel, and Power BI.</li>
         <li>Generated actionable business insights to improve customer retention, revenue tracking, and operational performance.</li>
         <li>Developed dashboards to support KPI tracking and data-driven decision-making.</li>
+      </ul>
+    </div>
+
+    <!-- Experience 2 -->
+    <div class="bg-slate-900 p-6 rounded-xl shadow-lg">
+      <h4 class="text-xl font-semibold">Data Reporting Analyst (Intern)</h4>
+      <p class="text-gray-400">Indian Institute of Management & Science | Jun 2025 – Aug 2025</p>	
+      
+      <ul class="list-disc list-inside mt-4 text-gray-400 space-y-2">
+        <li>Automated MIS dashboards reducing manual effort by 30%.</li>
+        <li>Performed KPI, trend & demographic analysis for admission forecasting.</li>
+        <li>Cleaned and standardized large datasets improving reporting accuracy.</li>	
       </ul>
     </div>
 
@@ -138,6 +163,44 @@
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
+ <!-- Analytix Labs Certificate -->
+       <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+        <img src="images/ANALYTI LABS.png" alt="Tata Certificate"
+             class="w-full h-60 object-cover cursor-pointer"
+             onclick="openZoom(this.src)">
+        <div class="p-4">
+          <h4 class="text-white font-semibold text-lg">
+            Certified Data Analyst
+          </h4>
+          <p class="text-gray-400 text-sm">
+           Data Analyst (Excel, SQL & Power BI)
+          </p>
+          <a href="https://api-lms.analytixlabs.co.in/uploads/Certificate/4PL36Y612MMN9SG0SALB-DVA-12032026-4828.pdf"
+             class="text-blue-400 mt-4 block">
+            View Certificate →
+          </a>
+        </div>
+      </div>
+
+        <!-- Nasscom Certificate -->
+      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+        <img src="images/Nasscom.png" alt="Nasscom Certificate"
+             class="w-full h-60 object-cover cursor-pointer"
+             onclick="openZoom(this.src)">
+        <div class="p-4">
+          <h4 class="text-white font-semibold text-lg">
+            Data Visualization & Analytics
+          </h4>
+          <p class="text-gray-400 text-sm">
+            Visualization & Analytics
+          </p>
+          <a href="https://fsp-assessment-certificates.s3.ap-southeast-1.amazonaws.com/%27/s3/buckets/fsp-assessment-certificates%27/Suraj%2Bsahu_156888889.pdf.pdf"
+             class="text-blue-400 mt-4 block">
+            View Certificate →
+          </a>
+        </div>
+      </div>
+
       <!-- Tata Certificate -->
       <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
         <img src="images/tata.png" alt="Tata Certificate"
@@ -151,6 +214,26 @@
             Dashboard & Data Visualization
           </p>
           <a href="https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_695a3448f76d215bcfd1995f_1767543688715_completion_certificate.pdf"
+             class="text-blue-400 mt-4 block">
+            View Certificate →
+          </a>
+        </div>
+      </div>
+
+      
+      <!-- Advisors Job Simulation -->
+      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+        <img src="images/master.png" alt="Advisors Certificate"
+             class="w-full h-60 object-cover cursor-pointer"
+             onclick="openZoom(this.src)">
+        <div class="p-4">
+          <h4 class="text-white font-semibold text-lg">
+            Advisors & Consulting Services Job Simulation
+          </h4>
+          <p class="text-gray-400 text-sm">
+            Promotion Optimization & Data-Driven Storytelling
+          </p>
+          <a href="https://www.theforage.com/completion-certificates/mfxGwGDp6WkQmtmTf/DZxgGgvMB6cEtEyJg_mfxGwGDp6WkQmtmTf_695a3448f76d215bcfd1995f_1768814375304_completion_certificate.pdf"
              class="text-blue-400 mt-4 block">
             View Certificate →
           </a>
@@ -184,44 +267,6 @@
           <p class="text-gray-400 text-sm">
             Advanced Queries & Data Handling
           </p>
-        </div>
-      </div>
-
-      <!-- Advisors Job Simulation -->
-      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
-        <img src="images/master.png" alt="Advisors Certificate"
-             class="w-full h-60 object-cover cursor-pointer"
-             onclick="openZoom(this.src)">
-        <div class="p-4">
-          <h4 class="text-white font-semibold text-lg">
-            Advisors & Consulting Services Job Simulation
-          </h4>
-          <p class="text-gray-400 text-sm">
-            Promotion Optimization & Data-Driven Storytelling
-          </p>
-          <a href="https://www.theforage.com/completion-certificates/mfxGwGDp6WkQmtmTf/DZxgGgvMB6cEtEyJg_mfxGwGDp6WkQmtmTf_695a3448f76d215bcfd1995f_1768814375304_completion_certificate.pdf"
-             class="text-blue-400 mt-4 block">
-            View Certificate →
-          </a>
-        </div>
-      </div>
-
-      <!-- Nasscom Certificate -->
-      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
-        <img src="images/Nasscom.png" alt="Nasscom Certificate"
-             class="w-full h-60 object-cover cursor-pointer"
-             onclick="openZoom(this.src)">
-        <div class="p-4">
-          <h4 class="text-white font-semibold text-lg">
-            Data Visualization & Analytics
-          </h4>
-          <p class="text-gray-400 text-sm">
-            Visualization & Analytics
-          </p>
-          <a href="https://fsp-assessment-certificates.s3.ap-southeast-1.amazonaws.com/%27/s3/buckets/fsp-assessment-certificates%27/Suraj%2Bsahu_156888889.pdf.pdf"
-             class="text-blue-400 mt-4 block">
-            View Certificate →
-          </a>
         </div>
       </div>
 
@@ -320,34 +365,142 @@
   </div>
 </section>
 
-<!-- DYNAMIC MESSAGE BOX -->
-<div class="flex justify-center my-16">
-  <div id="messageBox"
-       class="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-10 py-6 rounded-xl text-xl font-semibold shadow-lg transition transform hover:scale-105">
-       Click Me 😊
+
+<!-- VIDEO SECTION -->
+<section id="video" class="py-20 bg-slate-800">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <h2 class="text-3xl font-bold text-blue-500 mb-10">
+      My Project Videos
+    </h2>
+
+    <!-- Slider -->
+    <div class="relative overflow-hidden rounded-xl">
+
+      <!-- Slides -->
+      <div id="videoSlider" class="flex transition-transform duration-500">
+
+        <!-- Video 1 -->
+        <div class="min-w-full px-4 flex justify-center">
+          <video class="videoPlayer w-full md:w-3/4 rounded-xl shadow-lg" controls>
+            <source src="videos/INSTAMART.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="min-w-full px-4 flex justify-center">
+          <video class="videoPlayer w-full md:w-3/4 rounded-xl shadow-lg" controls>
+            <source src="videos/Blinkit.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="min-w-full px-4 flex justify-center">
+          <video class="videoPlayer w-full md:w-3/4 rounded-xl shadow-lg" controls>
+            <source src="videos/IPL.mp4" type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+
+      <!-- Buttons -->
+      <button onclick="prevSlide()" 
+      class="absolute left-4 top-1/2 -translate-y-1/2 bg-blue-600 px-4 py-2 rounded-full">
+        ❮
+      </button>
+
+      <button onclick="nextSlide()" 
+      class="absolute right-4 top-1/2 -translate-y-1/2 bg-blue-600 px-4 py-2 rounded-full">
+        ❯
+      </button>
+
+    </div>
+
+    <p class="text-gray-400 mt-6">
+      Watch my Data Analytics dashboards and project walkthroughs.
+    </p>
+
   </div>
-</div>
+</section>
 
-<!-- Flower Container -->
-<div id="flowerContainer" class="fixed inset-0 pointer-events-none overflow-hidden z-40"></div>
-
-
-<!-- ZOOM MODAL -->
-<div id="zoomModal" class="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center hidden z-50 p-4">
-  <img id="zoomImg" src="" class="max-w-full max-h-screen rounded-lg mb-4">
-  <button onclick="closeZoom()" class="bg-white text-black px-6 py-2 rounded hover:bg-gray-300">Close</button>
-</div>
 
 <script>
-function openZoom(src) {
-  const modal = document.getElementById('zoomModal');
-  const zoomImg = document.getElementById('zoomImg');
-  zoomImg.src = src;
-  modal.classList.remove('hidden');
+
+let slideIndex = 0;
+let autoSlide;
+
+const slider = document.getElementById("videoSlider");
+const slides = slider.children;
+const videos = document.querySelectorAll(".videoPlayer");
+
+/* SHOW SLIDE */
+
+function showSlide(){
+
+  if(slideIndex >= slides.length){
+    slideIndex = 0;   // restart from first video
+  }
+
+  if(slideIndex < 0){
+    slideIndex = slides.length - 1;
+  }
+
+  slider.style.transform = `translateX(-${slideIndex * 100}%)`;
 }
-function closeZoom() {
-  document.getElementById('zoomModal').classList.add('hidden');
+
+/* NEXT */
+
+function nextSlide(){
+  slideIndex++;
+  showSlide();
 }
+
+/* PREVIOUS */
+
+function prevSlide(){
+  slideIndex--;
+  showSlide();
+}
+
+
+/* AUTO SLIDER */
+
+function startAutoSlide(){
+
+  clearInterval(autoSlide);
+
+  autoSlide = setInterval(()=>{
+    slideIndex++;
+    showSlide();
+  },5000);
+
+}
+
+function stopAutoSlide(){
+  clearInterval(autoSlide);
+}
+
+startAutoSlide();
+
+
+/* VIDEO EVENTS */
+
+videos.forEach(video => {
+
+  video.addEventListener("play", () => {
+    stopAutoSlide();     // stop slider when video plays
+  });
+
+  video.addEventListener("pause", () => {
+    startAutoSlide();    // resume when paused
+  });
+
+  video.addEventListener("ended", () => {
+    startAutoSlide();    // resume when video ends
+  });
+
+});
+
 </script>
 
 <script>
