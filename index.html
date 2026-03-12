@@ -52,21 +52,54 @@
 
 <!-- HERO -->
 <section class="min-h-screen flex items-center justify-center text-center pt-20">
-  <div>
+
+  <div class="px-6">
+
+    <!-- Profile Image -->
     <div class="w-[250px] h-[250px] md:w-[300px] md:h-[300px] mx-auto rounded-full overflow-hidden border-4 border-blue-600 shadow-[0_0_40px_rgba(37,99,235,0.6)]">
-      <img src="images/Pass_photo.png" alt="Suraj Sahu" class="w-full h-fit object-cover">
+      <img 
+        src="images/Pass_photo.png" 
+        alt="Suraj Sahu" 
+        class="w-full h-fit object-cover">
     </div>
-    <h2 class="text-4xl md:text-5xl font-bold mt-6">Data Analyst & BI Enthusiast</h2>
-    <p class="mt-4 max-w-xl mx-auto text-gray-400">
-      Entry-Level Data Analyst skilled in Excel, SQL, Python, and Power BI.
-      Passionate about transforming raw datasets into actionable business insights.
+
+    <!-- Main Title -->
+    <h1 class="text-4xl md:text-5xl font-bold mt-6">
+      Data Analyst & BI Enthusiast
+    </h1>
+
+    <!-- Certification Title -->
+    <h2 class="text-xl md:text-2xl font-semibold mt-3 text-blue-500">
+      NASSCOM Certified
+    </h2>
+
+    <!-- Description -->
+    <p class="mt-4 max-w-xl mx-auto text-gray-500 leading-relaxed">
+       NASSCOM Certified Data Analyst skilled in Excel, SQL, Python, and Power BI. 
+      Passionate about transforming raw datasets into actionable business insights 
+      that support data-driven decision making.
     </p>
-    <div class="mt-6 space-x-4">
-      <a href="#projects" class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700 transition">View Projects</a>
-      <a href="files/Resume.pdf" class="border border-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 transition">Download Resume</a>
+
+    <!-- Buttons -->
+    <div class="mt-6 flex justify-center gap-4 flex-wrap">
+
+      <a href="#projects"
+         class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700 transition text-white">
+         View Projects
+      </a>
+
+      <a href="files/Resume.pdf"
+         class="border border-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition">
+         Download Resume
+      </a>
+
     </div>
+
   </div>
+
 </section>
+
+
 
 <!-- ABOUT -->
 <section id="about" class="py-20 bg-slate-900">
@@ -365,7 +398,6 @@
   </div>
 </section>
 
-
 <!-- VIDEO SECTION -->
 <section id="video" class="py-20 bg-slate-800">
   <div class="max-w-6xl mx-auto px-6 text-center">
@@ -503,6 +535,37 @@ videos.forEach(video => {
 
 </script>
 
+
+<!-- DYNAMIC MESSAGE BOX -->
+<div class="flex justify-center my-16">
+  <div id="messageBox"
+       class="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-10 py-6 rounded-xl text-xl font-semibold shadow-lg transition transform hover:scale-105">
+       Click Me 😊
+  </div>
+</div>
+
+<!-- Flower Container -->
+<div id="flowerContainer" class="fixed inset-0 pointer-events-none overflow-hidden z-40"></div>
+
+
+<!-- ZOOM MODAL -->
+<div id="zoomModal" class="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center hidden z-50 p-4">
+  <img id="zoomImg" src="" class="max-w-full max-h-screen rounded-lg mb-4">
+  <button onclick="closeZoom()" class="bg-white text-black px-6 py-2 rounded hover:bg-gray-300">Close</button>
+</div>
+
+<script>
+function openZoom(src) {
+  const modal = document.getElementById('zoomModal');
+  const zoomImg = document.getElementById('zoomImg');
+  zoomImg.src = src;
+  modal.classList.remove('hidden');
+}
+function closeZoom() {
+  document.getElementById('zoomModal').classList.add('hidden');
+}
+</script>
+
 <script>
 /* Dynamic Message Animation */
 const messageBox = document.getElementById("messageBox");
@@ -547,7 +610,7 @@ messageBox.addEventListener("click", () => {
 
 <!-- FOOTER -->
 <footer class="bg-slate-950 text-center py-6 text-gray-500">
-  © 2026 Suraj Sahu | Data Analyst Portfolio
+  © 2026 Suraj Sahu | Nasscom Certified Data Analyst 
 </footer>
 
 </body>
