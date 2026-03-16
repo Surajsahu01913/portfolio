@@ -98,8 +98,10 @@
   
 </style>
 </head>
+<!--Body start -->
 <body class="bg-slate-950 text-gray-200">
 
+<!--rgb light -->
   <div class="rgb-edge rgb-top"></div>
 <div class="rgb-edge rgb-left"></div>
 <div class="rgb-edge rgb-right"></div>
@@ -139,14 +141,14 @@
     </div>
 
     <!-- Main Title -->
-    <h1 class="text-4xl md:text-5xl font-bold mt-6">
-      Data Analyst & BI Enthusiast
-    </h1>
+   
+    <h1 id="typing" class="text-5xl md:text-5xl font-bold mt-6 text-white-400"></h1>
 
     <!-- Certification Title -->
     <h2 class="text-xl md:text-2xl font-semibold mt-3 text-blue-500">
       NASSCOM Certified
     </h2>
+    
 
     <!-- Description -->
     <p class="mt-4 max-w-xl mx-auto text-gray-500 leading-relaxed">
@@ -601,9 +603,39 @@
   </div>
 </section>
 
-
+<!--script start -->
 <script>
+  
+  /* ---------------- Main Title TYPING EFFECT ---------------- */
+  
 
+const text = ["Data Analyst & BI Enthusiast"];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+
+  if(count === text.length){
+    count = 2;
+  }
+
+  currentText = text[count];
+  letter = currentText.slice(0, ++index);
+
+  document.getElementById("typing").textContent = letter;
+
+  if(letter.length === currentText.length){
+    count++;
+    index = 0;
+  }
+
+  setTimeout(type,170);
+
+})();
+/* vedio effect  */
 let slideIndex = 0;
 let autoSlide;
 
@@ -694,7 +726,7 @@ videos.forEach(video => {
 <div id="flowerContainer" class="fixed inset-0 pointer-events-none overflow-hidden z-40"></div>
 
 
-<!-- ZOOM MODAL -->
+<!-- ZOOM MODAL botton -->
 <div id="zoomModal" class="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center hidden z-50 p-4">
   <img id="zoomImg" src="" class="max-w-full max-h-screen rounded-lg mb-4">
   <button onclick="closeZoom()" class="bg-white text-black px-6 py-2 rounded hover:bg-gray-300">Close</button>
@@ -710,9 +742,7 @@ function openZoom(src) {
 function closeZoom() {
   document.getElementById('zoomModal').classList.add('hidden');
 }
-</script>
 
-<script>
 /* Dynamic Message Animation */
 const messageBox = document.getElementById("messageBox");
 const flowerContainer = document.getElementById("flowerContainer");
@@ -760,7 +790,7 @@ messageBox.addEventListener("click", () => {
 </footer>
 <!-- SIDE INTRO POPUP -->
 <div id="introPopup"
-class="fixed right-6 bottom-10 bg-slate-900 text-white px-8 py-6 rounded-xl shadow-2xl border border-blue-500 text-center hidden z-50 max-w-sm popup-slide">
+class="fixed right-6 top-20 bg-slate-900 text-white px-8 py-6 rounded-xl shadow-2xl border border-blue-500 text-center hidden z-50 max-w-sm popup-slide">
 
   <h2 class="text-xl font-semibold text-blue-400 mb-2">
     Hello Sir 👋
@@ -773,7 +803,7 @@ class="fixed right-6 bottom-10 bg-slate-900 text-white px-8 py-6 rounded-xl shad
   </p>
 
   <p class="text-sm text-gray-400 mt-2">
-    Scroll down to explore my portfolio ↓
+    Scroll down to explore ↓
   </p>
 
 </div>
@@ -785,9 +815,9 @@ const popup = document.getElementById("introPopup");
 
 setTimeout(() => {
   popup.classList.remove("hidden");
-}, 1000);
+}, 2000);
 
-
+ 
 /* HIDE POPUP WHEN USER SCROLLS */
 
 window.addEventListener("scroll", () => {
@@ -801,7 +831,7 @@ window.addEventListener("scroll", () => {
 </script>
 
 
-<!-- BACK TO TOP BUTTON -->
+
 <!-- BACK TO TOP BUTTON -->
 <button id="topBtn"
 class="fixed bottom-6 right-6 bg-red-600 hover:bg-lime-700  text-white 
@@ -829,7 +859,7 @@ window.addEventListener("scroll", () => {
 });
 
 
-/* CLICK → SCROLL TO TOP + REFRESH */
+/* CLICK → SCROLL TO TOP + REFRESH  button */
 
 topBtn.addEventListener("click", () => {
 
@@ -845,6 +875,7 @@ topBtn.addEventListener("click", () => {
 });
 
 </script>
+<!--muscic-->
 
 </body>
 </html>
