@@ -95,6 +95,39 @@
     opacity: 0;
   }
  }
+
+  /* ---- 3D CARD EFFECT ---- */
+  .card-3d-wrap {
+    perspective: 1000px;
+  }
+
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    will-change: transform;
+    animation: floatCard 3s ease-in-out infinite;
+  }
+
+  /* Each card gets a slightly different float timing so they don't all move together */
+  .card-3d:nth-child(2) { animation-delay: 0.4s; }
+  .card-3d:nth-child(3) { animation-delay: 0.8s; }
+  .card-3d:nth-child(4) { animation-delay: 1.2s; }
+  .card-3d:nth-child(5) { animation-delay: 1.6s; }
+  .card-3d:nth-child(6) { animation-delay: 2.0s; }
+  .card-3d:nth-child(7) { animation-delay: 0.6s; }
+  .card-3d:nth-child(8) { animation-delay: 1.0s; }
+  .card-3d:nth-child(9) { animation-delay: 1.4s; }
+
+  @keyframes floatCard {
+    0%   { transform: translateY(0px);   }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px);   }
+  }
+
+  .card-3d:hover {
+    animation-play-state: paused;
+    box-shadow: 0 20px 60px rgba(37, 99, 235, 0.35);
+  }
   
 </style>
 </head>
@@ -232,7 +265,7 @@
          class="text-blue-400 hover:text-blue-300 underline">
          MyClickBook
       </a>)
-      | Feb 2026 – Present
+      | Feb 2026 – May 2026
     </p>
 
    <ul class="mt-4 space-y-3 text-gray-400 text-sm leading-relaxed list-disc pl-5">
@@ -335,14 +368,14 @@
   <div class="max-w-6xl mx-auto px-6">
     <h3 class="text-3xl font-bold text-blue-500 mb-10">Certifications</h3>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
 
      <!-- Internship Certificate -->
-<div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+<div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
   <img src="images/inten.png" alt="Internship Certificate"
        class="w-full h-60 object-cover cursor-pointer"
        onclick="openZoom(this.src)">
-  <div class="p-4">
+  <div class="p-4 flex flex-col flex-grow">
     <h4 class="text-white font-semibold text-lg">
       Internship Certificate
     </h4>
@@ -358,11 +391,11 @@
       
 
      <!-- Internship Certificate -->
-<div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+<div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
   <img src="images/gmail.png" alt="Internship Certificate Gmail"
        class="w-full h-60 object-cover cursor-pointer"
        onclick="openZoom(this.src)">
-  <div class="p-4">
+  <div class="p-4 flex flex-col flex-grow">
     <h4 class="text-white font-semibold text-lg">
       Internship Certificate Gmail
     </h4>
@@ -380,7 +413,7 @@
 
 
  <!-- Analytix Labs Certificate -->
-       <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+       <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/ANALYTI.png" alt="Tata Certificate"
              class="w-full h-60 object-cover cursor-pointer"
              onclick="openZoom(this.src)">
@@ -399,7 +432,7 @@
       </div>
 
         <!-- Nasscom Certificate -->
-      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/nasscom.png" alt="Nasscom Certificate"
              class="w-full h-60 object-cover cursor-pointer"
              onclick="openZoom(this.src)">
@@ -418,7 +451,7 @@
       </div>
 
       <!-- Tata Certificate -->
-      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/tata.png" alt="Tata Certificate"
              class="w-full h-60 object-cover cursor-pointer"
              onclick="openZoom(this.src)">
@@ -438,7 +471,7 @@
 
       
       <!-- Advisors Job Simulation -->
-      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/master.png" alt="Advisors Certificate"
              class="w-full h-60 object-cover cursor-pointer"
              onclick="openZoom(this.src)">
@@ -457,7 +490,7 @@
       </div>
 
       <!-- Power BI Certificate -->
-      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/Power_bi.png" alt="Power BI Certificate"
              class="w-full h-60 object-cover cursor-pointer"
              onclick="openZoom(this.src)">
@@ -472,7 +505,7 @@
       </div>
 
       <!-- SQL Certificate -->
-      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+      <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/Sql.png" alt="SQL Certificate"
              class="w-full h-60 object-cover cursor-pointer"
              onclick="openZoom(this.src)">
@@ -495,50 +528,50 @@
 <section id="projects" class="py-20 bg-slate-800">
   <div class="max-w-6xl mx-auto px-6">
     <h3 class="text-3xl font-bold text-blue-500 mb-10">Projects</h3>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
 
-      <div class="bg-slate-900 p-6 rounded-xl hover:scale-105 transition">
+      <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
         <h4 class="text-2xl font-semibold">Instamart Analytics</h4>
         <p class="text-gray-400 mt-2">SQL, Power BI, Excel</p>
         <a href="https://github.com/Surajsahu01913/Instamart" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
       
-      <div class="bg-slate-900 p-6 rounded-xl hover:scale-105 transition">
+      <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
         <h4 class="text-2xl font-semibold">Blinkit Business Analytics</h4>
         <p class="text-gray-400 mt-2">SQL, Power BI, Python, Excel</p>
         <a href="https://github.com/Surajsahu01913/blinkit-business-analytics" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
-      <div class="bg-slate-900 p-6 rounded-xl hover:scale-105 transition">
+      <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
         <h4 class="text-2xl font-semibold">AAPL Stock Dashboard</h4>
         <p class="text-gray-400 mt-2">Power BI, API Data</p>
         <a href="https://github.com/Surajsahu01913/apple-stock-realtime-data" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
-      <div class="bg-slate-900 p-6 rounded-xl hover:scale-105 transition">
+      <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
         <h4 class="text-2xl font-semibold">Healthcare Data Insights</h4>
         <p class="text-gray-400 mt-2">SQL Analysis</p>
         <a href="https://github.com/Surajsahu01913/Healthcare-Data-Insights-SQL" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
-      <div class="bg-slate-900 p-6 rounded-xl hover:scale-105 transition">
+      <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
         <h4 class="text-2xl font-semibold">Customer-Transactions</h4>
         <p class="text-gray-400 mt-2">SQL Analysis</p>
         <a href="https://github.com/Surajsahu01913/Customer-Transactions-SQL-Analysis" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
-      <div class="bg-slate-900 p-6 rounded-xl hover:scale-105 transition">
+      <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
         <h4 class="text-2xl font-semibold">Pizza Sales Analysis</h4>
         <p class="text-gray-400 mt-2">Power Bi,SQL Analysis</p>
         <a href="https://github.com/Surajsahu01913/Pizza-Sales-Analysis-SQL" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
-      <div class="bg-slate-900 p-6 rounded-xl hover:scale-105 transition">
+      <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
         <h4 class="text-2xl font-semibold">Music Store SQL Analysis</h4>
         <p class="text-gray-400 mt-2">SQL Analysis</p>
         <a href="https://github.com/Surajsahu01913/Music-Store-SQL-Analysis" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
-      <div class="bg-slate-900 p-6 rounded-xl hover:scale-105 transition">
+      <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
         <h4 class="text-2xl font-semibold">Customers Orders Analysis</h4>
         <p class="text-gray-400 mt-2">SQL Analysis</p>
         <a href="https://github.com/Surajsahu01913/Books-Customers-Orders-SQL-Analysis" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
-      <div class="bg-slate-900 p-6 rounded-xl hover:scale-105 transition">
+      <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
         <h4 class="text-2xl font-semibold">Cricket-Analysis</Cricket-Analysis></h4>
         <p class="text-gray-400 mt-2">Power Bi,SQL Analysis</p>
         <a href="https://github.com/Surajsahu01913/Cricket-Analytics-IPL-2023" class="text-blue-400 mt-4 block">View on GitHub →</a>
@@ -551,36 +584,36 @@
 <section id="gallery" class="py-20">
   <div class="max-w-6xl mx-auto px-6">
     <h3 class="text-3xl font-bold text-blue-500 mb-10">Gallery</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-stretch">
+      <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/Blankit.png" alt="Blinkit Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">Blinkit Dashboard ></div>
       </div>
-      <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+      <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/Apple.png" alt="AAPL Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">AAPL Stock Dashboard ></div>
       </div>
-      <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+      <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/IPL.png" alt="IPL Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">IPL-2023 Dashboard ></div>
       </div>
-       <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+       <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/pizza.png" alt="AAPL Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">AAPL Stock Dashboard ></div>
       </div>
-       <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+       <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/sqlpic.png" alt="AAPL Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">Healthcare SQL Quari ></div>
       </div>
-       <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+       <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/pai.png" alt="Blinkit Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">Use python Blinkit Dashboard></div>
       </div>
-        <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+        <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/bar1.png" alt="Blinkit Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">Use python Blinkit Dashboard></div>
       </div>
-        <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300">
+        <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/bar2.png" alt="Blinkit Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">Use python Blinkit Dashboard></div>
       </div>
@@ -925,6 +958,29 @@ topBtn.addEventListener("click", () => {
 });
 
 </script>
+<!-- 3D CARD MOUSE TRACKING -->
+<script>
+(function(){
+  function apply3D(card) {
+    card.addEventListener('mousemove', function(e) {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const cx = rect.width / 2;
+      const cy = rect.height / 2;
+      const rotY =  ((x - cx) / cx) * 12;
+      const rotX = -((y - cy) / cy) * 12;
+      card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.04,1.04,1.04)`;
+    });
+    card.addEventListener('mouseleave', function() {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+    });
+  }
+
+  document.querySelectorAll('.card-3d').forEach(apply3D);
+})();
+</script>
+
 <!--muscic-->
 
 </body>
