@@ -2,12 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
   <title>Suraj Sahu | Data Analyst</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <!----Style-->
 <style>
+  /* ---- MOBILE / iPHONE FIXES ---- */
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body { overflow-x: hidden; font-family: 'Poppins', system-ui, -apple-system, sans-serif; }
+  .hero-section { min-height: 100vh; min-height: 100svh; }   /* iOS Safari address-bar fix */
+  #typing { min-height: 1.2em; }                             /* stops layout jump while typing */
+  nav.site-nav { padding-top: env(safe-area-inset-top); }
+  #topBtn { bottom: calc(1.5rem + env(safe-area-inset-bottom)); right: calc(1.5rem + env(safe-area-inset-right)); }
+  #topBtn.invisible-btn { pointer-events: none; }
+
+  @media (max-width: 767px) {
+    .rgb-left, .rgb-right { width: 3px; }
+    /* floating cards + will-change on 20+ cards makes iPhone Safari laggy */
+    .card-3d { animation: none !important; will-change: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .card-3d, .rgb-edge, .popup-slide { animation: none !important; }
+  }
 
 
   /* Popup Slide Animation */
@@ -140,13 +158,12 @@
 <div class="rgb-edge rgb-right"></div>
 
 <!-- NAVBAR -->
-<nav class="fixed top-0 w-full bg-slate-900 shadow-lg z-50">
-  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+<nav class="site-nav fixed top-0 w-full bg-slate-900 shadow-lg z-50">
+  <div class="max-w-6xl mx-auto px-5 md:px-6 py-3 md:py-4 flex justify-between items-center">
 
-    <!-- Logo / Name -->
     <h1 class="text-xl font-bold text-blue-500">Suraj Sahu</h1>
 
-    <!-- Menu -->
+    <!-- Desktop menu -->
     <div class="space-x-6 hidden md:flex">
       <a href="#about" class="hover:text-blue-400 transition">About</a>
       <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
@@ -157,25 +174,41 @@
       <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
     </div>
 
+    <!-- Mobile hamburger -->
+    <button id="menuBtn" aria-label="Open menu" aria-expanded="false"
+            class="md:hidden w-11 h-11 flex items-center justify-center text-3xl text-blue-400">
+      &#9776;
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-5 pb-4">
+    <a href="#about" class="block py-3 border-b border-slate-800">About</a>
+    <a href="#skills" class="block py-3 border-b border-slate-800">Skills</a>
+    <a href="#certifications" class="block py-3 border-b border-slate-800">Certifications</a>
+    <a href="#projects" class="block py-3 border-b border-slate-800">Projects</a>
+    <a href="#video" class="block py-3 border-b border-slate-800">Video</a>
+    <a href="#gallery" class="block py-3 border-b border-slate-800">Gallery</a>
+    <a href="#contact" class="block py-3">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="min-h-screen flex items-center justify-center text-center pt-20">
+<section class="hero-section flex items-center justify-center text-center pt-24 pb-10">
 
   <div class="px-6">
 
     <!-- Profile Image -->
-    <div class="w-[250px] h-[250px] md:w-[300px] md:h-[300px] mx-auto rounded-full overflow-hidden border-4 border-blue-600 shadow-[0_0_40px_rgba(37,99,235,0.6)]">
-      <img 
-        src="images/Pass_photo.png" 
-        alt="Suraj Sahu" 
-        class="w-full h-fit object-cover">
-    </div>
+<div class="w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] mx-auto rounded-full overflow-hidden border-4 border-blue-600 shadow-[0_0_40px_rgba(37,99,235,0.6)]">
+  <img 
+    src="images/Pass_photo.png" 
+    alt="Suraj Sahu" 
+    class="w-full h-full object-cover object-top">
+</div>
 
     <!-- Main Title -->
    
-    <h1 id="typing" class="text-5xl md:text-5xl font-bold mt-6 text-white-400"></h1>
+    <h1 id="typing" class="text-3xl sm:text-4xl md:text-5xl font-bold mt-6 text-white leading-tight"></h1>
 
     <!-- Certification Title -->
     <h2 class="text-xl md:text-2xl font-semibold mt-3 text-blue-500">
@@ -184,7 +217,7 @@
     
 
     <!-- Description -->
-    <p class="mt-4 max-w-xl mx-auto text-gray-500 leading-relaxed">
+    <p class="mt-4 max-w-xl mx-auto text-gray-400 leading-relaxed text-sm sm:text-base">
        NASSCOM Certified Data Analyst skilled in Excel, SQL, Python, and Power BI. 
       Passionate about transforming raw datasets into actionable business insights 
       that support data-driven decision making.
@@ -198,7 +231,7 @@
          View Projects
       </a>
 
-      <a href="files\SurajSahu_Resume.pdf" download
+      <a href="files/SurajSahu_Resume.pdf" download
    class="border border-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition">
    Download Resume
     </a>
@@ -212,10 +245,10 @@
 
 
 <!-- ABOUT -->
-<section id="about" class="py-20 bg-slate-900">
+<section id="about" class="py-14 md:py-20 bg-slate-900">
   <div class="max-w-5xl mx-auto px-6">
     
-    <h3 class="text-3xl font-bold text-blue-500 mb-6">About Me</h3>
+    <h3 class="text-2xl sm:text-3xl font-bold text-blue-500 mb-6">About Me</h3>
 
     <p class="text-gray-400 leading-7 mb-4">
       I have successfully completed my Bachelor of Computer Applications (BCA) with a CGPA of 8.52 from the Indian Institute of Management & Science (2023–2026).
@@ -243,15 +276,70 @@
 </section>
 
 <!-- EXPERIENCE -->
-<section class="py-20">
+<section class="py-14 md:py-20">
   <div class="max-w-5xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-blue-500 mb-6">Experience</h3>
+    <h3 class="text-2xl sm:text-3xl font-bold text-blue-500 mb-6">Experience</h3>
 
-  <!-- Experience 1 -->
-<div class="bg-slate-900 p-6 rounded-xl shadow-lg mb-6 flex justify-between items-start">
+<!-- Experience 1  -->
+<div class="bg-slate-900 p-5 sm:p-6 rounded-xl shadow-lg mb-6 flex flex-col-reverse sm:flex-row sm:justify-between sm:items-start gap-4">
 
   <!-- LEFT SIDE CONTENT -->
-  <div>
+  <div class="min-w-0">
+
+    <h4 class="text-xl font-semibold">
+      Data Analyst
+    </h4>
+
+    <p class="text-gray-400">
+      kashti finserv pvt ltd.
+      (Project:
+      <a href="https://www.kashti.com/"
+         target="_blank"
+         class="text-blue-400 hover:text-blue-300 underline">
+          Kashti Finserv Pvt Ltd
+      </a>)
+      | AUG 2026 – Present
+    </p>
+
+   <ul class="mt-4 space-y-3 text-gray-400 text-sm leading-relaxed list-disc pl-5">
+
+  <li>
+    Developed analytical reports and Power BI dashboards for collection operations,
+     leveraging Python, SQL, Excel, and large-scale customer and call data to monitor agent productivity, 
+     payment outcomes, recovery performance, and key operational KPIs.
+
+  </li>
+
+  <li>
+    Generated actionable insights from customer, payment, 
+    and collection data to improve recovery performance, agent productivity, contact efficiency, 
+    and overall collection operations.
+
+  </li>
+
+  <li>
+   Developed interactive Power BI dashboards to monitor collection KPIs, 
+   agent productivity, call performance, payment outcomes, and operational trends, 
+   enabling data-driven decision-making by business stakeholders.
+
+  </li>
+
+</ul>
+
+  </div>
+
+  <!-- RIGHT SIDE LOGO -->
+  <img src="images/kashti-logo.png" 
+       alt="Kashti Finserv Logo"
+       class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-contain p-1 sm:ml-6 shrink-0">
+
+</div>
+
+  <!-- Experience 2  -->
+<div class="bg-slate-900 p-5 sm:p-6 rounded-xl shadow-lg mb-6 flex flex-col-reverse sm:flex-row sm:justify-between sm:items-start gap-4">
+
+  <!-- LEFT SIDE CONTENT -->
+  <div class="min-w-0">
 
     <h4 class="text-xl font-semibold">
       Data Analyst (Intern)
@@ -294,14 +382,14 @@
   <!-- RIGHT SIDE LOGO -->
   <img src="images/myclickbook-logo.png" 
        alt="MyClickBook Logo"
-       class="w-16 h-16 rounded-2xl object-contain  p-1 ml-6">
+       class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-contain p-1 sm:ml-6 shrink-0">
 
 </div>
-  <!-- Experience 2 -->
-<div class="bg-slate-900 p-6 rounded-xl shadow-lg mb-6 flex justify-between items-start">
+  <!-- Experience 3 -->
+<div class="bg-slate-900 p-5 sm:p-6 rounded-xl shadow-lg mb-6 flex flex-col-reverse sm:flex-row sm:justify-between sm:items-start gap-4">
 
   <!-- LEFT SIDE CONTENT -->
-  <div>
+  <div class="min-w-0">
 
     <h4 class="text-xl font-semibold">
       Data Reporting Analyst (Intern)
@@ -318,13 +406,9 @@
     </p>
 
    <ul class="mt-4 space-y-3 text-gray-400 text-sm leading-relaxed list-disc pl-5">
-
- <ul class="list-disc list-inside mt-4 text-gray-400 space-y-2">
         <li>Automated MIS dashboards reducing manual effort by 30%.</li>
         <li>Performed KPI, trend & demographic analysis for admission forecasting.</li>
-        <li>Cleaned and standardized large datasets improving reporting accuracy.</li>	
-      </ul>
-
+        <li>Cleaned and standardized large datasets improving reporting accuracy.</li>
   </ul>
 
   </div>
@@ -332,28 +416,28 @@
   <!-- RIGHT SIDE LOGO -->
   <img src="images/iims.png" 
        alt="iims"
-       class="w-16 h-16 rounded-2xl object-contain p-1 ml-6">
+       class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-contain p-1 sm:ml-6 shrink-0">
 
 </div>
 
 </section>
 
 <!-- SKILLS -->
-<section id="skills" class="py-20 bg-slate-900">
+<section id="skills" class="py-14 md:py-20 bg-slate-900">
   <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-blue-500 mb-8">Skills</h3>
+    <h3 class="text-2xl sm:text-3xl font-bold text-blue-500 mb-8">Skills</h3>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-slate-800 p-6 rounded-xl">
+      <div class="bg-slate-800 p-5 sm:p-6 rounded-xl">
         <h4 class="font-semibold mb-3">Programming</h4>
         <p>Python (Pandas, NumPy)</p>
         <p>SQL (Joins, Subqueries, GROUP BY)</p>
       </div>
-      <div class="bg-slate-800 p-6 rounded-xl">
+      <div class="bg-slate-800 p-5 sm:p-6 rounded-xl">
         <h4 class="font-semibold mb-3">BI Tools</h4>
         <p>Power BI (DAX, Dashboards)</p>
         <p>Advanced Excel (Pivot, XLOOKUP, Power Query)</p>
       </div>
-      <div class="bg-slate-800 p-6 rounded-xl">
+      <div class="bg-slate-800 p-5 sm:p-6 rounded-xl">
         <h4 class="font-semibold mb-3">Analytics</h4>
         <p>KPI Development</p>
         <p>Trend Analysis</p>
@@ -364,16 +448,16 @@
 </section>
 
 <!-- CERTIFICATIONS -->
-<section id="certifications" class="py-20">
+<section id="certifications" class="py-14 md:py-20">
   <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-blue-500 mb-10">Certifications</h3>
+    <h3 class="text-2xl sm:text-3xl font-bold text-blue-500 mb-10">Certifications</h3>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
 
      <!-- Internship Certificate -->
 <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
   <img src="images/inten.png" alt="Internship Certificate"
-       class="w-full h-60 object-cover cursor-pointer"
+       class="w-full h-48 sm:h-60 object-cover cursor-pointer"
        onclick="openZoom(this.src)">
   <div class="p-4 flex flex-col flex-grow">
     <h4 class="text-white font-semibold text-lg">
@@ -382,7 +466,7 @@
     <p class="text-gray-400 text-sm">
       Data Analyst (Excel, SQL & Power BI)
     </p>
-    <a href="files\SurajSahuCertificate.pdf"
+    <a href="files/SurajSahuCertificate.pdf"
        class="text-blue-400 mt-4 block">
       View Certificate →
     </a>
@@ -393,7 +477,7 @@
      <!-- Internship Certificate -->
 <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
   <img src="images/gmail.png" alt="Internship Certificate Gmail"
-       class="w-full h-60 object-cover cursor-pointer"
+       class="w-full h-48 sm:h-60 object-cover cursor-pointer"
        onclick="openZoom(this.src)">
   <div class="p-4 flex flex-col flex-grow">
     <h4 class="text-white font-semibold text-lg">
@@ -402,7 +486,7 @@
     <p class="text-gray-400 text-sm">
       Data Analyst (Excel, SQL & Power BI)
     </p>
-    <a href="files\Gmail.pdf"
+    <a href="files/Gmail.pdf"
        class="text-blue-400 mt-4 block">
       View Certificate →
     </a>
@@ -413,7 +497,7 @@
    <!-- Internship Certificate1 -->
 <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
   <img src="images/IIMS.c.jpeg" alt="Internship Certificate Gmail"
-       class="w-full h-60 object-cover cursor-pointer"
+       class="w-full h-48 sm:h-60 object-cover cursor-pointer"
        onclick="openZoom(this.src)">
   <div class="p-4 flex flex-col flex-grow">
     <h4 class="text-white font-semibold text-lg">
@@ -422,7 +506,7 @@
     <p class="text-gray-400 text-sm">
       Data Reporting Analyst (Intern) (Excel, SQL & Power BI)
     </p>
-    <a href="files\iims.pdf"
+    <a href="files/iims.pdf"
        class="text-blue-400 mt-4 block">
       View Certificate →
     </a>
@@ -432,7 +516,7 @@
    <!-- Internship Certificate1 -->
 <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
   <img src="images/IIMS-c.jpeg" alt="Internship Certificate Gmail"
-       class="w-full h-60 object-cover cursor-pointer"
+       class="w-full h-48 sm:h-60 object-cover cursor-pointer"
        onclick="openZoom(this.src)">
   <div class="p-4 flex flex-col flex-grow">
     <h4 class="text-white font-semibold text-lg">
@@ -441,7 +525,7 @@
     <p class="text-gray-400 text-sm">
       Data Reporting Analyst (Intern) (Excel, SQL & Power BI)
     </p>
-    <a href="files\IIMS.c.pdf"
+    <a href="files/IIMS.c.pdf"
        class="text-blue-400 mt-4 block">
       View Certificate →
     </a>
@@ -452,7 +536,7 @@
  <!-- Analytix Labs Certificate -->
        <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/ANALYTI.png" alt="Tata Certificate"
-             class="w-full h-60 object-cover cursor-pointer"
+             class="w-full h-48 sm:h-60 object-cover cursor-pointer"
              onclick="openZoom(this.src)">
         <div class="p-4">
           <h4 class="text-white font-semibold text-lg">
@@ -471,7 +555,7 @@
         <!-- Nasscom Certificate -->
       <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/nasscom.png" alt="Nasscom Certificate"
-             class="w-full h-60 object-cover cursor-pointer"
+             class="w-full h-48 sm:h-60 object-cover cursor-pointer"
              onclick="openZoom(this.src)">
         <div class="p-4">
           <h4 class="text-white font-semibold text-lg">
@@ -490,7 +574,7 @@
       <!-- Tata Certificate -->
       <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/tata.png" alt="Tata Certificate"
-             class="w-full h-60 object-cover cursor-pointer"
+             class="w-full h-48 sm:h-60 object-cover cursor-pointer"
              onclick="openZoom(this.src)">
         <div class="p-4">
           <h4 class="text-white font-semibold text-lg">
@@ -510,7 +594,7 @@
       <!-- Advisors Job Simulation -->
       <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/master.png" alt="Advisors Certificate"
-             class="w-full h-60 object-cover cursor-pointer"
+             class="w-full h-48 sm:h-60 object-cover cursor-pointer"
              onclick="openZoom(this.src)">
         <div class="p-4">
           <h4 class="text-white font-semibold text-lg">
@@ -529,7 +613,7 @@
       <!-- Power BI Certificate -->
       <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/Power_bi.png" alt="Power BI Certificate"
-             class="w-full h-60 object-cover cursor-pointer"
+             class="w-full h-48 sm:h-60 object-cover cursor-pointer"
              onclick="openZoom(this.src)">
         <div class="p-4">
           <h4 class="text-white font-semibold text-lg">
@@ -544,7 +628,7 @@
       <!-- SQL Certificate -->
       <div class="bg-slate-900 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
         <img src="images/Sql.png" alt="SQL Certificate"
-             class="w-full h-60 object-cover cursor-pointer"
+             class="w-full h-48 sm:h-60 object-cover cursor-pointer"
              onclick="openZoom(this.src)">
         <div class="p-4">
           <h4 class="text-white font-semibold text-lg">
@@ -562,54 +646,54 @@
 
 
 <!-- PROJECTS -->
-<section id="projects" class="py-20 bg-slate-800">
+<section id="projects" class="py-14 md:py-20 bg-slate-800">
   <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-blue-500 mb-10">Projects</h3>
+    <h3 class="text-2xl sm:text-3xl font-bold text-blue-500 mb-10">Projects</h3>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
 
       <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
-        <h4 class="text-2xl font-semibold">Instamart Analytics</h4>
+        <h4 class="text-xl sm:text-2xl font-semibold">Instamart Analytics</h4>
         <p class="text-gray-400 mt-2">SQL, Power BI, Excel</p>
         <a href="https://github.com/Surajsahu01913/Instamart" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
       
       <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
-        <h4 class="text-2xl font-semibold">Blinkit Business Analytics</h4>
+        <h4 class="text-xl sm:text-2xl font-semibold">Blinkit Business Analytics</h4>
         <p class="text-gray-400 mt-2">SQL, Power BI, Python, Excel</p>
         <a href="https://github.com/Surajsahu01913/blinkit-business-analytics" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
       <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
-        <h4 class="text-2xl font-semibold">AAPL Stock Dashboard</h4>
+        <h4 class="text-xl sm:text-2xl font-semibold">AAPL Stock Dashboard</h4>
         <p class="text-gray-400 mt-2">Power BI, API Data</p>
         <a href="https://github.com/Surajsahu01913/apple-stock-realtime-data" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
       <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
-        <h4 class="text-2xl font-semibold">Healthcare Data Insights</h4>
+        <h4 class="text-xl sm:text-2xl font-semibold">Healthcare Data Insights</h4>
         <p class="text-gray-400 mt-2">SQL Analysis</p>
         <a href="https://github.com/Surajsahu01913/Healthcare-Data-Insights-SQL" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
       <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
-        <h4 class="text-2xl font-semibold">Customer-Transactions</h4>
+        <h4 class="text-xl sm:text-2xl font-semibold">Customer-Transactions</h4>
         <p class="text-gray-400 mt-2">SQL Analysis</p>
         <a href="https://github.com/Surajsahu01913/Customer-Transactions-SQL-Analysis" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
       <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
-        <h4 class="text-2xl font-semibold">Pizza Sales Analysis</h4>
+        <h4 class="text-xl sm:text-2xl font-semibold">Pizza Sales Analysis</h4>
         <p class="text-gray-400 mt-2">Power Bi,SQL Analysis</p>
         <a href="https://github.com/Surajsahu01913/Pizza-Sales-Analysis-SQL" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
       <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
-        <h4 class="text-2xl font-semibold">Music Store SQL Analysis</h4>
+        <h4 class="text-xl sm:text-2xl font-semibold">Music Store SQL Analysis</h4>
         <p class="text-gray-400 mt-2">SQL Analysis</p>
         <a href="https://github.com/Surajsahu01913/Music-Store-SQL-Analysis" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
       <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
-        <h4 class="text-2xl font-semibold">Customers Orders Analysis</h4>
+        <h4 class="text-xl sm:text-2xl font-semibold">Customers Orders Analysis</h4>
         <p class="text-gray-400 mt-2">SQL Analysis</p>
         <a href="https://github.com/Surajsahu01913/Books-Customers-Orders-SQL-Analysis" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
       <div class="bg-slate-900 p-6 rounded-xl transition flex flex-col h-full card-3d">
-        <h4 class="text-2xl font-semibold">Cricket-Analysis</Cricket-Analysis></h4>
+        <h4 class="text-xl sm:text-2xl font-semibold">Cricket-Analysis</h4>
         <p class="text-gray-400 mt-2">Power Bi,SQL Analysis</p>
         <a href="https://github.com/Surajsahu01913/Cricket-Analytics-IPL-2023" class="text-blue-400 mt-4 block">View on GitHub →</a>
       </div>
@@ -618,40 +702,40 @@
 </section>
 
 <!-- GALLERY -->
-<section id="gallery" class="py-20">
+<section id="gallery" class="py-14 md:py-20">
   <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-blue-500 mb-10">Gallery</h3>
+    <h3 class="text-2xl sm:text-3xl font-bold text-blue-500 mb-10">Gallery</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 items-stretch">
       <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
-        <img src="images/Blankit.png" alt="Blinkit Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
+        <img src="images/Blankit.png" alt="Blinkit Dashboard" class="w-full h-48 sm:h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">Blinkit Dashboard ></div>
       </div>
       <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
-        <img src="images/Apple.png" alt="AAPL Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
+        <img src="images/Apple.png" alt="AAPL Dashboard" class="w-full h-48 sm:h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">AAPL Stock Dashboard ></div>
       </div>
       <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
-        <img src="images/IPL.png" alt="IPL Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
+        <img src="images/IPL.png" alt="IPL Dashboard" class="w-full h-48 sm:h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">IPL-2023 Dashboard ></div>
       </div>
        <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
-        <img src="images/pizza.png" alt="AAPL Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
+        <img src="images/pizza.png" alt="AAPL Dashboard" class="w-full h-48 sm:h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">AAPL Stock Dashboard ></div>
       </div>
        <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
-        <img src="images/sqlpic.png" alt="AAPL Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
+        <img src="images/sqlpic.png" alt="AAPL Dashboard" class="w-full h-48 sm:h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">Healthcare SQL Quari ></div>
       </div>
        <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
-        <img src="images/pai.png" alt="Blinkit Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
+        <img src="images/pai.png" alt="Blinkit Dashboard" class="w-full h-48 sm:h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">Use python Blinkit Dashboard></div>
       </div>
         <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
-        <img src="images/bar1.png" alt="Blinkit Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
+        <img src="images/bar1.png" alt="Blinkit Dashboard" class="w-full h-48 sm:h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">Use python Blinkit Dashboard></div>
       </div>
         <div class="bg-slate-800 rounded-xl overflow-hidden shadow-lg transition duration-300 flex flex-col h-full card-3d">
-        <img src="images/bar2.png" alt="Blinkit Dashboard" class="w-full h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
+        <img src="images/bar2.png" alt="Blinkit Dashboard" class="w-full h-48 sm:h-60 object-cover cursor-pointer" onclick="openZoom(this.src)">
         <div class="p-4 text-white font-semibold text-lg">Use python Blinkit Dashboard></div>
       </div>
     </div>
@@ -659,10 +743,10 @@
 </section>
 
 <!-- VIDEO SECTION -->
-<section id="video" class="py-20 bg-slate-800">
+<section id="video" class="py-14 md:py-20 bg-slate-800">
   <div class="max-w-6xl mx-auto px-6 text-center">
 
-    <h2 class="text-3xl font-bold text-blue-500 mb-10">
+    <h2 class="text-2xl sm:text-3xl font-bold text-blue-500 mb-10">
       My Project Videos
     </h2>
 
@@ -673,22 +757,22 @@
       <div id="videoSlider" class="flex transition-transform duration-500">
 
         <!-- Video 1 -->
-        <div class="min-w-full px-4 flex justify-center">
-          <video class="videoPlayer w-full md:w-3/4 rounded-xl shadow-lg" controls>
+        <div class="min-w-full px-2 sm:px-4 flex justify-center">
+          <video class="videoPlayer w-full md:w-3/4 rounded-xl shadow-lg" controls playsinline preload="metadata">
             <source src="videos/INSTAMART.mp4" type="video/mp4">
           </video>
         </div>
 
         <!-- Video 2 -->
-        <div class="min-w-full px-4 flex justify-center">
-          <video class="videoPlayer w-full md:w-3/4 rounded-xl shadow-lg" controls>
+        <div class="min-w-full px-2 sm:px-4 flex justify-center">
+          <video class="videoPlayer w-full md:w-3/4 rounded-xl shadow-lg" controls playsinline preload="metadata">
             <source src="videos/Blinkit.mp4" type="video/mp4">
           </video>
         </div>
 
         <!-- Video 3 -->
-        <div class="min-w-full px-4 flex justify-center">
-          <video class="videoPlayer w-full md:w-3/4 rounded-xl shadow-lg" controls>
+        <div class="min-w-full px-2 sm:px-4 flex justify-center">
+          <video class="videoPlayer w-full md:w-3/4 rounded-xl shadow-lg" controls playsinline preload="metadata">
             <source src="videos/IPL.mp4" type="video/mp4">
           </video>
         </div>
@@ -697,12 +781,12 @@
 
       <!-- Buttons -->
       <button onclick="prevSlide()" 
-      class="absolute left-4 top-1/2 -translate-y-1/2 bg-blue-600 px-4 py-2 rounded-full">
+      class="absolute left-2 top-3 sm:top-1/2 sm:-translate-y-1/2 bg-blue-600/90 w-10 h-10 rounded-full text-white z-10">
         ❮
       </button>
 
       <button onclick="nextSlide()" 
-      class="absolute right-4 top-1/2 -translate-y-1/2 bg-blue-600 px-4 py-2 rounded-full">
+      class="absolute right-2 top-3 sm:top-1/2 sm:-translate-y-1/2 bg-blue-600/90 w-10 h-10 rounded-full text-white z-10">
         ❯
       </button>
 
@@ -840,8 +924,8 @@ videos.forEach(video => {
 
 <!-- ZOOM MODAL botton -->
 <div id="zoomModal" class="fixed inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center hidden z-50 p-4">
-  <img id="zoomImg" src="" class="max-w-full max-h-screen rounded-lg mb-4">
-  <button onclick="closeZoom()" class="bg-white text-black px-6 py-2 rounded hover:bg-gray-300">Close</button>
+  <img id="zoomImg" src="" class="max-w-full max-h-[75vh] object-contain rounded-lg mb-4">
+  <button onclick="closeZoom()" class="bg-white text-black px-8 py-3 rounded-lg hover:bg-gray-300">Close</button>
 </div>
 
 <script>
@@ -884,35 +968,35 @@ messageBox.addEventListener("click", () => {
 
 
 <!-- CONTACT -->
-<section id="contact" class="py-20 bg-slate-900 text-center">
+<section id="contact" class="py-14 md:py-20 bg-slate-900 text-center">
   <div class="max-w-4xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-blue-500 mb-10">Contact</h3>
-    <p>Email: surajsahu01913@gmail.com</p>
+    <h3 class="text-2xl sm:text-3xl font-bold text-blue-500 mb-10">Contact</h3>
+    <p class="break-words">Email: surajsahu01913@gmail.com</p>
     <p>Phone: +91 9348039795</p>
     <p>Bengaluru, India</p>
     <div class="mt-6 space-x-4">
       <a href="https://github.com/Surajsahu01913" class="text-blue-400">GitHub</a>
-      <a href="https://www.linkedin.com/in/suraj-sahu-b56bb332b" class="text-blue-400">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/surajsahu-dataanalyst" class="text-blue-400">LinkedIn</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-slate-950 text-center py-6 text-gray-500">
+<footer class="bg-slate-950 text-center py-6 px-4 text-sm text-gray-500" style="padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));">
   © 2026 Suraj Sahu | Nasscom Certified Data Analyst 
 </footer>
 <!-- SIDE INTRO POPUP -->
 <div id="introPopup"
-class="fixed right-2 top-8 md:right-6 md:top-20
+class="fixed right-3 top-20 md:right-6 md:top-24
 bg-slate-900 text-white
 px-3 py-3 md:px-8 md:py-6
 rounded-xl shadow-2xl border border-blue-500
 text-center hidden z-50
-max-w-[200px] md:max-w-sm
+max-w-[220px] md:max-w-sm
 text-sm md:text-base
 popup-slide">
 
-  <h2 class="text-xl font-semibold text-blue-400 mb-2">
+  <h2 class="text-lg md:text-xl font-semibold text-blue-400 mb-1 md:mb-2">
     Hello  👋
   </h2>
 
@@ -954,9 +1038,9 @@ window.addEventListener("scroll", () => {
 
 <!-- BACK TO TOP BUTTON -->
 <button id="topBtn"
-class="fixed bottom-6 right-6 bg-red-600 hover:bg-lime-700  text-white 
+class="fixed bottom-6 right-6 z-50 bg-red-600 hover:bg-lime-700  text-white 
 w-12 h-12 rounded-full shadow-lg flex items-center justify-center 
-text-2xl font-extrabold transition opacity-0">
+text-2xl font-extrabold transition opacity-0 invisible-btn">
 
   ↑
 
@@ -972,8 +1056,10 @@ window.addEventListener("scroll", () => {
 
   if(window.scrollY > 300){
     topBtn.style.opacity = "1";
+    topBtn.classList.remove("invisible-btn");
   } else {
     topBtn.style.opacity = "0";
+    topBtn.classList.add("invisible-btn");
   }
 
 });
@@ -995,6 +1081,21 @@ topBtn.addEventListener("click", () => {
 });
 
 </script>
+<!-- MOBILE MENU -->
+<script>
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+  function toggle(open){
+    menu.classList.toggle('hidden', !open);
+    btn.setAttribute('aria-expanded', open);
+    btn.innerHTML = open ? '&#10005;' : '&#9776;';
+  }
+  btn.addEventListener('click', () => toggle(menu.classList.contains('hidden')));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggle(false)));
+})();
+</script>
+
 <!-- 3D CARD MOUSE TRACKING -->
 <script>
 (function(){
